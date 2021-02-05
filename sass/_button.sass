@@ -26,12 +26,8 @@ button
     border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133))
     border-image: initial
 .button
-    &_initial-view__3I8Q-, &_question__3qegS                
-        padding: 0 2rem
-        margin: 0 2.5rem 0 0
-        width: auto
-        max-width: none
-        height: 5.4rem
+    
+    &_initial-view__3I8Q-, &_question__3qegS, &_phone-form__3NxSk                       
         z-index: 5
         display: inline-block
         position: relative
@@ -63,6 +59,12 @@ button
         box-shadow: 0 0.6rem 1.5rem 0 rgba(0,0,0,.2)
         overflow: hidden
         cursor: pointer
+    &_initial-view__3I8Q-
+        padding: 0 2rem
+        margin: 0 2.5rem 0 0
+        width: auto
+        max-width: none
+        height: 5.4rem    
     &_question__3qegS 
         display: block    
         &:hover
@@ -184,3 +186,5 @@ button
                     height: 2px
                     bottom: 0
                     background: #080401   
+                &:hover
+                    color: #f9a85c
