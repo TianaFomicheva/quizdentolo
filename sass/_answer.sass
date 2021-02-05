@@ -1,5 +1,5 @@
 .answer
-    &_small__2SKUB, &_large__2OoMk
+    &_small__2SKUB, &_large__2OoMk, &_medium__h9U8l
             position: relative
             display: -webkit-flex
             display: -moz-box
@@ -35,12 +35,35 @@
                 transition: .3s ease
                 cursor: pointer
     &-content
+        &_detail
+            &__3NlKq
+                padding: 1.3rem 2rem 1rem 4rem
         &_plain
             &__1TEbJ
                 padding: 1.5rem 1rem 1.5rem 4.2rem
                 display: table
                 min-height: 100%
+        &_card
+            &__374KB
+                width: 100%
+                padding: 1.2rem 1.3rem
+                min-height: 9rem
+                text-align: center   
+    &_card
+        &__1NzG8
+                min-width: 12rem
+                border-color: #e6e6e6
+        
+                       
 
+@media ( min-width: 661px)  
+   .answer
+        &_medium__h9U8l
+            width: -webkit-calc(25% - .88rem)
+            width: -moz-calc(25% - .88rem)
+            width: calc(25% - .88rem)
+            & input 
+                display: none   
 
 @media ( min-width: 901px) 
     .answer
@@ -48,6 +71,7 @@
             width: -webkit-calc(20% - .88rem)
             width: -moz-calc(20% - .88rem)
             width: calc(20% - .88rem)
+
 
             
 
