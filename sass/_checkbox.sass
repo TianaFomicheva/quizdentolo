@@ -1,23 +1,46 @@
 .checkbox
     &_plain__1lZjG, &_card__2Kw-u, &_detail__I8wvs, &_checkbox__3DgMK, &_checked__193bi
-            position: absolute
-            width: 1.9rem
-            height: 1.9rem
-            border: 1px solid #3c9
-            -webkit-border-radius: 50%
-            -moz-border-radius: 50%
-            border-radius: 50%
-            -webkit-transition: .3s ease
-            -o-transition: .3s ease
-            -moz-transition: .3s ease
-            transition: .3s ease
-            cursor: pointer
-            top: 0
-            right: 0
-            bottom: 0
-            left: 1.5rem
-            position: absolute
-            margin: auto 0
+        position: absolute
+        width: 1.9rem
+        height: 1.9rem
+        border: 1px solid #3c9
+        -webkit-border-radius: 50%
+        -moz-border-radius: 50%
+        border-radius: 50%
+        -webkit-transition: .3s ease
+        -o-transition: .3s ease
+        -moz-transition: .3s ease
+        transition: .3s ease
+        cursor: pointer
+        top: 0
+        right: 0
+        bottom: 0
+        left: 1.5rem
+        position: absolute
+        margin: auto 0
+        &::before
+                content: ""
+                top: -3px
+                right: 0
+                bottom: 0
+                left: 0
+                position: absolute
+                width: 48%
+                height: 18%
+                margin: auto
+                -webkit-transform: rotate(-45deg) scale(1.0)
+                -moz-transform: rotate(-45deg) scale(1.0)
+                -ms-transform: rotate(-45deg) scale(1.0)
+                -o-transform: rotate(-45deg) scale(1.0)
+                transform: rotate(-45deg) scale(1.0)
+                border-color: #fff
+                border-style: solid
+                border-width: 0 0 4px 4px
+                -webkit-transition: .3s ease
+                -o-transition: .3s ease
+                -moz-transition: .3s ease
+                transition: .3s ease
+        
     &_card
         &__2Kw-u 
             top: 1rem
@@ -29,3 +52,4 @@
     &_checked
         &__193bi
             background: #3c9
+            

@@ -52,3 +52,6 @@
     30%  { left: 180% }
     100% { left: 240% }
 }
+@-webkit-keyframes fadeIn { from { opacity:0 !important; } to { opacity:1 !important; } }
+@-moz-keyframes fadeIn { from { opacity:0 !important;  } to { opacity:1 !important; } }
+@keyframes fadeIn { from { opacity:0 !important; } to { opacity:1 !important; } }
