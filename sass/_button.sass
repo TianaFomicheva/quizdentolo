@@ -59,6 +59,25 @@ button
         box-shadow: 0 0.6rem 1.5rem 0 rgba(0,0,0,.2)
         overflow: hidden
         cursor: pointer
+        &::before
+            content: ""
+            position: absolute
+            left: -220%
+            top: 0
+            z-index: 0
+            width: 130%
+            height: 100%
+            background: hsla(0,0%,100%,.9)
+            -webkit-box-shadow: 0 0 4rem 3rem #fff
+            -moz-box-shadow: 0 0 4rem 3rem #fff
+            box-shadow: 0 0 4rem 3rem #fff
+            -webkit-transform: skew(-75deg)
+            -moz-transform: skew(-75deg)
+            -ms-transform: skew(-75deg)
+            -o-transform: skew(-75deg)
+            transform: skew(-75deg)
+            animation: button_shine__3g80k 4.5s cubic-bezier(0, 1.45, 0.36, 1) 2s infinite
+            
     &_initial-view__3I8Q-
         padding: 0 2rem
         margin: 0 2.5rem 0 0
@@ -188,3 +207,12 @@ button
                     background: #080401   
                 &:hover
                     color: #f9a85c
+@media ( max-width: 960px)  
+    .button_initial-view__3I8Q- 
+        margin: 0 auto 1rem   
+
+
+    .callback-button_callback-button__2x8RW, .callback-button_carouselItem__PjEUK, .callback-button_default__j8f_i
+        display: block
+        text-align: center
+        margin: 0 auto 2rem                
