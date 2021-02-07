@@ -12,13 +12,14 @@
   integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
   crossorigin="anonymous"></script>
     <script src="index.js"></script>
+    <script src="onMouse.js"></script>
    
 <body>
     <div id="root">
        <div class="app-container_app__3Up4d">
           <main class="app-container_default__1vu2k  level" id="level_0">
              <section class="initial-view_default__8Mqq8">
-                <div class="flying-btn_default__JaS5i fade-in-static" style="animation-duration: 600ms; animation-delay: 0ms; animation-fill-mode: both; left: 171px; top: 222.5px;">Пройти <br>тест</div>
+                <div class="flying-btn_default__JaS5i fade-in-static" id="flying" style="animation-duration: 600ms; animation-delay: 0ms; animation-fill-mode: both; left: 171px; top: 222.5px;">Пройти <br>тест</div>
                 <div class="background-image_aged__R2GNL fade-in-static" style="animation-duration: 600ms; animation-delay: 0ms; animation-fill-mode: both;"></div>
                 <header class="header_header__2aHg4">
                    <div class=" slide-in-left" style="animation-duration: 1000ms; animation-delay: 100ms; animation-fill-mode: both;">
@@ -361,10 +362,10 @@
    </div>
    <form>
       <div class=" fade-in-up" style="animation-duration: 600ms; animation-delay: 100ms; animation-fill-mode: both;">
-         <div class="input-field_default__2A25G input-field_phone__2RpXD input-field_active__383ra" style="transition: all 600ms ease 0s;"><input name="phone" meta="[object Object]" placeholder="" type="tel" autocomplete="off"></div>
+         <div class="input-field_default__2A25G input-field_phone__2RpXD input-field_active__383ra" style="transition: all 600ms ease 0s;"><input name="phone" meta="[object Object]" placeholder="Ваш телефон" type="tel" autocomplete="off"></div>
       </div>
       <div class=" fade-in-right" style="animation-duration: 500ms; animation-delay: 100ms; animation-fill-mode: both;">
-         <button id="" class="button_phone-form__3NxSk" type="submit">Получить расчёт</button>
+         <button id="" class="button_phone-form__3NxSk" type="submit">Получить расчёт <i class="fa fa-long-arrow-right" aria-hidden="true"></i></button>
          <span class="agreement_agreement__y-aB-">
             <input name="agreement" id="agreement" type="checkbox" checked="">
             <label for="agreement">

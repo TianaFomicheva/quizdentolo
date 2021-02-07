@@ -1,7 +1,5 @@
 
 $(document).ready(function () {
-
-    $('input[name=phone]').attr("placeholder", 'Ваш телефон');
     $('#main_start_button').on('click', function () {
         changeLevel('plus')
     })
