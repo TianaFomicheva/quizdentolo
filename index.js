@@ -1,5 +1,8 @@
-
 $(document).ready(function () {
+    let now = new Date();
+    let cur_hour = now.getHours()
+    let count_test = cur_hour +7
+    $('.visits_visits__29XEU').find('b').html(count_test)
     $('#flying').on('click', function () {
         $('#main_start_button').trigger('click')
     })
@@ -125,6 +128,46 @@ $(document).ready(function () {
         setTimeout(()=>{$('.button_question__3qegS').trigger('click')},1000)
         $('.answer_large__2OoMk-1').unbind()
         
+    })
+
+    $('input[name="phone"]').mask("+7(999) 999-99-99")
+
+
+    $('.button_phone-form__3NxSk').on('click', function(){
+        if($('#test_phone').val() !== ''){
+        let results = []
+        $('input:not(#test_phone)').each(function(){
+            if($(this).attr('checked') == 'checked' && $(this).attr('id') !== 'test_phone'){
+
+                let question_answer = $(this).closest('section').find('article').find('h3').html()
+                let question_answer_replaced
+                if(question_answer !== undefined){
+                question_answer_replaced = question_answer.replace('<h3>', '').replace('</h3>', '').replace('<p>', '').replace('</p>', '')
+                }else{
+                    question_answer_replaced  = '' 
+                }
+                let question_header = $(this).closest('.question_question__35CQU').find('.question_header__1hHV9').html()
+                results.push( question_header + ' : '+ question_answer_replaced) 
+
+            }
+            
+        })
+        results.pop()
+        results.pop()
+        results.push('Телефон: ' + $('#test_phone').val())
+        let message = JSON.stringify(results)
+        $.ajax({
+            url: 'send.php',
+            method: 'POST',
+            data: {message: message},
+            success: function(){
+                console.log('success')
+            }
+        })
+    }else{
+        $('.error-message_default__19Cke').addClass('error-message_active__130GH').html('Введите номер телефона')
+        return false
+        }
     })
 
 })
