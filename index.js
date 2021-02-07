@@ -22,6 +22,7 @@ $(document).ready(function () {
         $(this).find('input').attr('checked','checked')
         $(this).addClass('answer_checked__2bg92')
         $(this).find('.checkbox_plain__1lZjG').addClass('checkbox_checked__193bi')
+        $(this).append('<style>.checkbox_checked__193bi:before{transform:rotate(-45deg) scale(1)}</style>')
         
     })
     $('.answer_card__1NzG8').on('click', function () {
@@ -34,6 +35,7 @@ $(document).ready(function () {
         $(this).find('input').attr('checked','checked')
         $(this).addClass('answer_checked__2bg92')
         $(this).find('.checkbox_card__2Kw-u').addClass('checkbox_checked__193bi')
+        $(this).append('<style>.checkbox_checked__193bi:before{transform:rotate(-45deg) scale(1)}</style>')
         
     })
     $('.answer_large__2OoMk').on('click', function () {
@@ -47,6 +49,7 @@ $(document).ready(function () {
         $(this).addClass('answer_checked__2bg92')
         $(this).find('.checkbox_detail__I8wvs').addClass('checkbox_checked__193bi')
         $(this).find('.checkbox_plain__1lZjG').addClass('checkbox_checked__193bi')
+        $(this).append('<style>.checkbox_checked__193bi:before{transform:rotate(-45deg) scale(1)}</style>')
         
     })
 
