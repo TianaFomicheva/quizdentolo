@@ -133,7 +133,7 @@ $(document).ready(function () {
     $('input[name="phone"]').mask("+7(999) 999-99-99")
 
 
-    $('.button_phone-form__3NxSk').on('click', function(){
+    $('#test_submit').on('click', function(){
         if($('#test_phone').val() !== ''){
         let results = []
         $('input:not(#test_phone)').each(function(){
@@ -159,9 +159,9 @@ $(document).ready(function () {
         $.ajax({
             url: 'send.php',
             method: 'POST',
-            data: {message: message},
+            data: {message: message, subject: 'Вам пришла заявка на расчет'},
             success: function(){
-                console.log('success')
+                showTestThanks()
             }
         })
     }else{
@@ -170,8 +170,37 @@ $(document).ready(function () {
         }
     })
 
+    $('#order_submit').on('click', function(){
+        if($('#order_phone').val() !== ''){
+            let message = 'Телефон: ' + $('#order_phone').val()
+            $.ajax({
+                url: 'send.php',
+                method: 'POST',
+                data: {message: message, subject: 'Вам пришла заявка на запись на прием'},
+                success: function(){
+                    console.log('success')
+                    showOrderThanks()
+                }
+            })
+        }else{
+            $('.error-message_default__19Cke').addClass('error-message_active__130GH').html('Введите номер телефона')
+        return false
+        }
+            
+    })
+
 })
 
+function showOrderThanks(){
+    $('#level_0,#level_1,#level_2,#level_3,#level_4,#level_5,#level_7, #level_9').css('display', 'none')
+    $('.button-back_default__3LWlO').css('display', 'none')
+    $('#level_8').css('display', 'block')
+}
+function showTestThanks(){
+    $('#level_0,#level_1,#level_2,#level_3,#level_4,#level_5,#level_7, #level_8').css('display', 'none')
+    $('.button-back_default__3LWlO').css('display', 'none')
+    $('#level_9').css('display', 'block')
+}
 
 function changeLevel(action){
     let cur = parseInt($('.button_question__3qegS').attr('level-attr'));
