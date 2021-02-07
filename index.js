@@ -1,44 +1,84 @@
 
 $(document).ready(function () {
+    $('#flying').on('click', function () {
+        $('#main_start_button').trigger('click')
+    })
+
     $('#main_start_button').on('click', function () {
         changeLevel('plus')
     })
 
     $('.button-back_default__3LWlO').on('click', function () {
+        
+        if($('#level_7').css('display') === 'none'){
         changeLevel('minus')
+                }else{
+            $('#level_0').css('display', 'block')
+            $('#level_7').css('display', 'none') 
+
+        }
+        if($('#level_0').css('display') == 'block' || $('#level_7').css('display') == 'block'){
+            
+            $('.doctor_default__gPK7b, .button_question__3qegS').css('display', 'none')
+            }else{
+                
+                $('.doctor_default__gPK7b, .button_question__3qegS').css('display', 'block')
+             }
     })
     
     $('.button_question__3qegS').on('click', function () {
-        changeLevel('plus')
-    })
+       changeLevel('plus')
+    })    
+    $('.callback-button_default__j8f_i').on('click', function () {
+       $('#level_0').css('display', 'none')
+       $('#level_7').css('display', 'block')
+       $('.button-back_default__3LWlO').css('display', 'block')
+       if($('#level_0').css('display') == 'block' || $('#level_7').css('display') == 'block'){
+        $('.doctor_default__gPK7b').css('display', 'none')
+        }else{
+            $('.doctor_default__gPK7b').css('display', 'block')
+         }
+      
+    
 
-    $('.answer_small__2SKUB, .answer_large__2OoMk').on('click', function () {
+    })    
+    
+
+
+    $('.answer_small__2SKUB').on('click', function () {
+        $('.answer_small__2SKUB').unbind()
         if($(this).closest('.level').attr('id').slice(-1) == parseInt($('.button_question__3qegS').attr('level-attr'))){
             $(this).closest('.question_answersContainer__20Aez').find('input').each(function(){$(this).attr('checked',false)})
             $(this).closest('.question_answersContainer__20Aez').find('.answer_small__2SKUB').each(function(){$(this).removeClass('answer_checked__2bg92')})
             $(this).closest('.question_answersContainer__20Aez').find('.checkbox_plain__1lZjG').each(function(){$(this).removeClass('checkbox_checked__193bi')})
+            $(this).closest('.question_answersContainer__20Aez').find('.checkbox_detail__I8wvs').each(function(){$(this).removeClass('checkbox_checked__193bi')})
         }
         $('.error-message_default__19Cke').removeClass('error-message_active__130GH')  
         $(this).find('input').attr('checked','checked')
         $(this).addClass('answer_checked__2bg92')
         $(this).find('.checkbox_plain__1lZjG').addClass('checkbox_checked__193bi')
         $(this).append('<style>.checkbox_checked__193bi:before{transform:rotate(-45deg) scale(1)}</style>')
-        
+
+        setTimeout(()=>{$('.button_question__3qegS').trigger('click')},1000)
     })
     $('.answer_card__1NzG8').on('click', function () {
+        $('.answer_card__1NzG8').unbind()
         if($(this).closest('.level').attr('id').slice(-1) == parseInt($('.button_question__3qegS').attr('level-attr'))){
             $(this).closest('.question_answersContainer__20Aez').find('input').each(function(){$(this).attr('checked',false)})
             $(this).closest('.question_answersContainer__20Aez').find('.answer_small__2SKUB').each(function(){$(this).removeClass('answer_checked__2bg92')})
             $(this).closest('.question_answersContainer__20Aez').find('.checkbox_plain__1lZjG').each(function(){$(this).removeClass('checkbox_checked__193bi')})
+            $(this).closest('.question_answersContainer__20Aez').find('.checkbox_card__2Kw-u').each(function(){$(this).removeClass('checkbox_checked__193bi')})
         }
         $('.error-message_default__19Cke').removeClass('error-message_active__130GH')  
         $(this).find('input').attr('checked','checked')
         $(this).addClass('answer_checked__2bg92')
         $(this).find('.checkbox_card__2Kw-u').addClass('checkbox_checked__193bi')
         $(this).append('<style>.checkbox_checked__193bi:before{transform:rotate(-45deg) scale(1)}</style>')
+        setTimeout(()=>{$('.button_question__3qegS').trigger('click')},1000)
         
     })
-    $('.answer_large__2OoMk').on('click', function () {
+    $('.answer_large__2OoMk0').on('click', function () {
+        $('.answer_large__2OoMk0').unbind()
         if($(this).closest('.level').attr('id').slice(-1) == parseInt($('.button_question__3qegS').attr('level-attr'))){
             $(this).closest('.question_answersContainer__20Aez').find('input').each(function(){$(this).attr('checked',false)})
             $(this).closest('.question_answersContainer__20Aez').find('.answer_small__2SKUB').each(function(){$(this).removeClass('answer_checked__2bg92')})
@@ -50,6 +90,40 @@ $(document).ready(function () {
         $(this).find('.checkbox_detail__I8wvs').addClass('checkbox_checked__193bi')
         $(this).find('.checkbox_plain__1lZjG').addClass('checkbox_checked__193bi')
         $(this).append('<style>.checkbox_checked__193bi:before{transform:rotate(-45deg) scale(1)}</style>')
+        setTimeout(()=>{$('.button_question__3qegS').trigger('click')},1000)
+        
+        
+    })
+    $('.answer_large__2OoMk1').on('click', function () {
+        if($(this).closest('.level').attr('id').slice(-1) == parseInt($('.button_question__3qegS').attr('level-attr'))){
+            $(this).closest('.question_answersContainer__20Aez').find('input').each(function(){$(this).attr('checked',false)})
+            $(this).closest('.question_answersContainer__20Aez').find('.answer_small__2SKUB').each(function(){$(this).removeClass('answer_checked__2bg92')})
+            $(this).closest('.question_answersContainer__20Aez').find('.checkbox_plain__1lZjG').each(function(){$(this).removeClass('checkbox_checked__193bi')})
+        }
+        $('.error-message_default__19Cke').removeClass('error-message_active__130GH')  
+        $(this).find('input').attr('checked','checked')
+        $(this).addClass('answer_checked__2bg92')
+        $(this).find('.checkbox_detail__I8wvs').addClass('checkbox_checked__193bi')
+        $(this).find('.checkbox_plain__1lZjG').addClass('checkbox_checked__193bi')
+        $(this).append('<style>.checkbox_checked__193bi:before{transform:rotate(-45deg) scale(1)}</style>')
+        setTimeout(()=>{$('.button_question__3qegS').trigger('click')},1000)
+        $('.answer_large__2OoMk1').unbind()
+        
+    })
+    $('.answer_large__2OoMk-1').on('click', function () {
+        if($(this).closest('.level').attr('id').slice(-1) == parseInt($('.button_question__3qegS').attr('level-attr'))){
+            $(this).closest('.question_answersContainer__20Aez').find('input').each(function(){$(this).attr('checked',false)})
+            $(this).closest('.question_answersContainer__20Aez').find('.answer_small__2SKUB').each(function(){$(this).removeClass('answer_checked__2bg92')})
+            $(this).closest('.question_answersContainer__20Aez').find('.checkbox_plain__1lZjG').each(function(){$(this).removeClass('checkbox_checked__193bi')})
+        }
+        $('.error-message_default__19Cke').removeClass('error-message_active__130GH')  
+        $(this).find('input').attr('checked','checked')
+        $(this).addClass('answer_checked__2bg92')
+        $(this).find('.checkbox_detail__I8wvs').addClass('checkbox_checked__193bi')
+        $(this).find('.checkbox_plain__1lZjG').addClass('checkbox_checked__193bi')
+        $(this).append('<style>.checkbox_checked__193bi:before{transform:rotate(-45deg) scale(1)}</style>')
+        setTimeout(()=>{$('.button_question__3qegS').trigger('click')},1000)
+        $('.answer_large__2OoMk-1').unbind()
         
     })
 
@@ -58,8 +132,6 @@ $(document).ready(function () {
 
 function changeLevel(action){
     let cur = parseInt($('.button_question__3qegS').attr('level-attr'));
-    // $('.question_header__1hHV9').toggleClass('flip-in-up')
-    // $('.question_header__1hHV9').toggleClass('flip-in-up')
 
     
     if (action == 'plus') {
